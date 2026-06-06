@@ -93,7 +93,7 @@ public class ServerProperties {
 		this.file = file;
 		
 		Properties def = new Properties();
-		InputStreamReader defStream = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("server.properties"), StandardCharsets.UTF_8);
+		InputStreamReader defStream = new InputStreamReader(getClass().getClassLoader().getResourceAsStream("settings.properties"), StandardCharsets.UTF_8);
 		def.load(defStream);
 		defStream.close();
 		
