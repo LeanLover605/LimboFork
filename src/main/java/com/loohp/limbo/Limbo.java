@@ -180,7 +180,7 @@ public final class Limbo {
 		LIMBO_IMPLEMENTATION_VERSION = getLimboVersion();
 		console.sendMessage("Loading Limbo Version " + LIMBO_IMPLEMENTATION_VERSION + " on Minecraft " + SERVER_IMPLEMENTATION_VERSION);
 		
-		String spName = "server.properties";
+		String spName = "settings.properties";
         File sp = new File(spName);
         if (!sp.exists()) {
         	try (InputStream in = getClass().getClassLoader().getResourceAsStream(spName)) {
@@ -189,7 +189,7 @@ public final class Limbo {
             	e.printStackTrace();
             }
         }
-        properties = new ServerProperties(sp);
+        properties = new SettingsProperties(sp);
         
         if (!properties.isBungeecord()) {
         	console.sendMessage("If you are using bungeecord, consider turning that on in the settings!");
